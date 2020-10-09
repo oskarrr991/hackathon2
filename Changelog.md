@@ -1,3 +1,5 @@
-### Changelog
+# CHANGELOG
 
-## Version 1.0.0 (17 January 2019)
+## V1.0
+
+- Initial Release
