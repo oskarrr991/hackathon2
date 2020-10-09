@@ -1,36 +1,27 @@
-#### ArchitectUI Bootstrap 4 jQuery/HTML Theme FREE
-#### Made with love by DashboardPack.com
+# Hackathon2
 
-## PRO Version Available at - https://dashboardpack.com/theme-details/architectui-dashboard-html-pro/
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.6.
 
-Installation
-Download and uncompress the theme package archive in your desired folder location.
+## Development server
 
-Download and install Node.js from nodejs.org/en/download/
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Install the latest version of npm. This will be useful when running all the build commands. Run the following in a command line, either your IDE's Terminal window or in a Windows Command Prompt.
+## Code scaffolding
 
-                                                            
-    npm install --global npm@latest
-                                                            
-                                                        
-Install the app dependencies by running the following command in the command line inside the folder root where you have unzipped the theme package archive.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+## Build
 
-    npm install
-                                                        
-After npm finishes installing the modules from package.json you can go ahead and start the application. To do so, run the command below.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-You can also use yarn to install dependencies instead of npm.
+## Running unit tests
 
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-    npm run start
-                                                        
-After the comand finished, you should see a Compiled successfully! message in your terminal window. Also, a web server service will be started so you can view your app in the browser: http://localhost:8081
+## Running end-to-end tests
 
-To create a production optimised build run the command below:
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
+## Further help
 
-    npm run build
-                                                        
-This created another folder in the root of your project named build. You'll have an option to start a local web server to view your newly created production build.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
