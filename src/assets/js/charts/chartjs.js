@@ -1,3 +1,30 @@
+function getDoughnutChart(data, colors, keywords) {
+  if ($("#chartjs-doughnut-chart").length) {
+    var DoughnutData = {
+      datasets: [{
+        data: data,
+        backgroundColor: colors,
+        borderColor: colors,
+        borderWidth: colors
+      }],
+      labels: keywords
+    };
+    var DoughnutOptions = {
+      responsive: true,
+      animation: {
+        animateScale: true,
+        animateRotate: true
+      }
+    };
+    var doughnutChartCanvas = $("#chartjs-doughnut-chart").get(0).getContext("2d");
+    var doughnutChart = new Chart(doughnutChartCanvas, {
+      type: 'doughnut',
+      data: DoughnutData,
+      options: DoughnutOptions
+    });
+  }
+}
+
 $(function () {
   'use strict';
 
