@@ -1106,11 +1106,11 @@ pre {
   border: 0; }
 
 .table-striped tbody tr:nth-of-type(odd) {
-  background-color: #f8f9fb; }
+  background-color: #363954; }
 
 .table-hover tbody tr:hover {
   color: #212529;
-  background-color: #f8f9fb; }
+  background-color: #363954; }
 
 .table-primary,
 .table-primary > th,
@@ -1354,7 +1354,7 @@ pre {
   font-weight: 400;
   line-height: 1.5;
   color: #6c757d;
-  background-color: #f8f9fb;
+  background-color: #363954;
   background-clip: padding-box;
   border: 1px solid #f1f4f8;
   border-radius: 0.25rem;
@@ -1367,7 +1367,7 @@ pre {
     border: 0; }
   .form-control:focus {
     color: #495057;
-    background-color: #f8f9fb;
+    background-color: #363954;
     border-color: #d6e0ea;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
@@ -1386,7 +1386,7 @@ pre {
 
 select.form-control:focus::-ms-value {
   color: #6c757d;
-  background-color: #f8f9fb; }
+  background-color: #363954; }
 
 .form-control-file,
 .form-control-range {
@@ -2786,7 +2786,7 @@ input[type="button"].btn-block {
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
     .custom-select:focus::-ms-value {
       color: #6c757d;
-      background-color: #f8f9fb; }
+      background-color: #363954; }
   .custom-select[multiple], .custom-select[size]:not([size="1"]) {
     height: auto;
     padding-right: 0.75rem;
@@ -2846,7 +2846,7 @@ input[type="button"].btn-block {
   font-weight: 400;
   line-height: 1.5;
   color: #6c757d;
-  background-color: #f8f9fb;
+  background-color: #363954;
   border: 1px solid #f1f4f8;
   border-radius: 0.25rem; }
   .custom-file-label::after {
@@ -8977,7 +8977,7 @@ textarea {
     border: none; }
 
 .input-group-text {
-  background-color: #f8f9fb;
+  background-color: #363954;
   color: white;
   border-color: #f2f4f9;
   padding: 0px 10px;
