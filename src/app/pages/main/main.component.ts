@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TestService} from "../../services/test.service";
 
 @Component({
@@ -8,12 +8,18 @@ import {TestService} from "../../services/test.service";
 })
 export class MainComponent implements OnInit {
 
-  constructor(private testService: TestService) { }
+  constructor(private testService: TestService) {
+  }
 
   ngOnInit(): void {
     this.testService.getUserList().subscribe(response => {
       response.forEach(o => console.log(o.name + ' = '));
     })
+/*
+    this.testService.getKeywordList().subscribe(response => {
+      response.forEach(o => console.log(o.keyword + ':' + o.keywordAppeareanceCount + '\n'));
+    })*/
+
   }
 
 }

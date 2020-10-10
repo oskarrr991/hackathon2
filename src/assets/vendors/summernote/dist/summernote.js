@@ -7096,7 +7096,7 @@
           this.initialize();
       }
       /**
-       * create layout and initialize modules and other resources
+       * create layout and initialize moduls and other resources
        */
       Context.prototype.initialize = function () {
           this.layoutInfo = this.ui.createLayout(this.$note, this.options);
@@ -7105,7 +7105,7 @@
           return this;
       };
       /**
-       * destroy modules and other resources and remove layout
+       * destroy moduls and other resources and remove layout
        */
       Context.prototype.destroy = function () {
           this._destroy();
@@ -7113,7 +7113,7 @@
           this.ui.removeLayout(this.$note, this.layoutInfo);
       };
       /**
-       * destory modules and other resources and initialize it again
+       * destory moduls and other resources and initialize it again
        */
       Context.prototype.reset = function () {
           var disabled = this.isDisabled();
@@ -7132,7 +7132,7 @@
               _this.memo('button.' + key, buttons[key]);
           });
           var modules = $$1.extend({}, this.options.modules, $$1.summernote.plugins || {});
-          // add and initialize modules
+          // add and initialize moduls
           Object.keys(modules).forEach(function (key) {
               _this.module(key, modules[key], true);
           });
@@ -7142,7 +7142,7 @@
       };
       Context.prototype._destroy = function () {
           var _this = this;
-          // destroy modules with reversed order
+          // destroy moduls with reversed order
           Object.keys(this.modules).reverse().forEach(function (key) {
               _this.removeModule(key);
           });
