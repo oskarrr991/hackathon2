@@ -204,35 +204,6 @@ $(function () {
     });
   }
 
-  if ($("#chartjs-doughnut-chart").length) {
-    var DoughnutData = {
-      datasets: [{
-        data: [30, 40, 30],
-        backgroundColor: chartColors,
-        borderColor: chartColors,
-        borderWidth: chartColors
-      }],
-      labels: [
-        'Data 1',
-        'Data 2',
-        'Data 3',
-      ]
-    };
-    var DoughnutOptions = {
-      responsive: true,
-      animation: {
-        animateScale: true,
-        animateRotate: true
-      }
-    };
-    var doughnutChartCanvas = $("#chartjs-doughnut-chart").get(0).getContext("2d");
-    var doughnutChart = new Chart(doughnutChartCanvas, {
-      type: 'doughnut',
-      data: DoughnutData,
-      options: DoughnutOptions
-    });
-  }
-
   if ($("#chartjs-pie-chart").length) {
     var PieData = {
       datasets: [{

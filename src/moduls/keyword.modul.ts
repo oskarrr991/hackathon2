@@ -1,4 +1,4 @@
 export class Keyword {
   keyword: string;
-  keywordAppeareanceCount: number;
+  keywordAppearanceCount: number;
 }
