@@ -24,7 +24,51 @@ function getDoughnutChart(data, colors, keywords) {
     });
   }
 }
+//<======= here
+function getLineChart(months) {
+  console.log(months);
+  if ($("#chartjs-staked-line-chart").length) {
+    var options = {
+      type: 'line',
+      data: {
+        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            borderWidth: 2,
+            fill: false,
+            backgroundColor: chartColors[0],
+            borderColor: chartColors[0],
+            borderWidth: 0
+          },
+          {
+            label: '# of Points',
+            data: [7, 11, 5, 8, 3, 7],
+            borderWidth: 2,
+            fill: false,
+            backgroundColor: chartColors[1],
+            borderColor: chartColors[1],
+            borderWidth: 0
+          }
+        ]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              reverse: false
+            }
+          }]
+        },
+        fill: false,
+        legend: false
+      }
+    }
 
+    var ctx = document.getElementById('chartjs-staked-line-chart').getContext('2d');
+    new Chart(ctx, options);
+  }
+}
 $(function () {
   'use strict';
 
@@ -66,10 +110,12 @@ $(function () {
   }
 
   if ($("#chartjs-staked-line-chart").length) {
+    
+
     var options = {
       type: 'line',
       data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: ["May", "June", "July", "August", "September", "November"],
         datasets: [{
             label: '# of Votes',
             data: [12, 19, 3, 5, 2, 3],
@@ -77,15 +123,6 @@ $(function () {
             fill: false,
             backgroundColor: chartColors[0],
             borderColor: chartColors[0],
-            borderWidth: 0
-          },
-          {
-            label: '# of Points',
-            data: [7, 11, 5, 8, 3, 7],
-            borderWidth: 2,
-            fill: false,
-            backgroundColor: chartColors[1],
-            borderColor: chartColors[1],
             borderWidth: 0
           }
         ]

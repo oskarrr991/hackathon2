@@ -43,7 +43,7 @@ $border-color: #f2f4f9;
 $card-bg: #fff;
 $card-box-shadow:0 0 10px -5px rgba(183, 192, 206, 0.15);
 $card-border-color:rgba(238, 238, 238, 0);
-$card-title-color: #313131;
+$card-title-color: white;
 $component-bg: darken($template-body-color, 2%);
 $component-active-bg: $blue;
 $component-active-color: $white;
@@ -73,7 +73,7 @@ $theme-colors: (primary: #696ffb,
     warning: #FF6F59,
     danger: #DB504A,
     light: #f3f5f6,
-    dark: #223C61,
+    dark: white,
     white: #fff);
 $social-colors: (twitter: #55acee,
     facebook: #0084ff,
@@ -103,7 +103,7 @@ $font-weight-normal: 400;
 $font-weight-medium: 500;
 $font-weight-bold: 700;
 $text-muted: $gray-500;
-$text-gray: #565656;
+$text-gray: white;
 ////////// TYPOGRAPHY VARIABLES //////////
 
 ////////// TABLE VARIABLES //////////
