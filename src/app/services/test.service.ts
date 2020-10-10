@@ -11,7 +11,7 @@ export class TestService {
 
   constructor(private http: HttpClient) { }
 
-  private requestUrlErnest = 'api.kono.lt:9999/api/getExperts?keyword=Tensorflow';
+  private requestUrlErnest = 'http://api.kono.lt:9999/api/getExperts?keyword=Tensorflow';
   private requestUrlJaroslav = 'http://a6620c7796c1.ngrok.io/api/core/getTrendingKeywords';
 
   getUserList(): Observable<User[]> {

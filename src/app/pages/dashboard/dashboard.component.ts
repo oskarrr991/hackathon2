@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TestService} from "../../services/test.service";
-import {Keyword} from "../../../moduls/keyword.modul";
 
 @Component({
   selector: 'app-dashboard',
@@ -9,39 +8,33 @@ import {Keyword} from "../../../moduls/keyword.modul";
 })
 export class DashboardComponent implements OnInit {
 
-  keywords: Keyword[];
+  keywords: string[] = [];
   keywordAppeareanceCount: number[] = [];
+  chartColors = ["#696ffb", "#7db8f9", "#05478f", "#00cccc", "#6CA5E0", "#1A76CA"];
 
-  constructor(private testService: TestService) { }
-
-  ngOnInit(): void {
-    this.getDoughnutChart();
-   /* this.testService.getKeywordList().subscribe(response => {
-      response.forEach(o => console.log(o.keyword + ':' + o.keywordAppeareanceCount + '\n'));
-    });*/
-    this.testService.getKeywordList().subscribe(response => {
-      response.forEach(o => {
-        console.log(o.keywordAppeareanceCount);
-        this.keywordAppeareanceCount.push(o.keywordAppeareanceCount)
-      });
-      });
-
+  constructor(private testService: TestService) {
   }
 
-  private getDoughnutChart() {
+  ngOnInit(): void {
+    this.testService.getKeywordList().subscribe(response => {
+      response.forEach(o => {
+        this.keywords.push(o.keyword)
+        this.keywordAppeareanceCount.push(o.keywordAppeareanceCount)
+      });
+      this.calculateDoughnutChart();
+    });
+  }
+
+  private calculateDoughnutChart() {
     if ($("#chartjs-doughnut-chart").length) {
       var DoughnutData = {
         datasets: [{
           data: this.keywordAppeareanceCount,
-          backgroundColor: chartColors,
-          borderColor: chartColors,
-          borderWidth: chartColors
+          backgroundColor: this.chartColors,
+          borderColor: this.chartColors,
+          borderWidth: this.chartColors
         }],
-        labels: [
-          'Data 1',
-          'Data 2',
-          'Data 3',
-        ]
+        labels: this.keywords
       };
       var DoughnutOptions = {
         responsive: true,
