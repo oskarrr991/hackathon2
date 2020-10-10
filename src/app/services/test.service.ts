@@ -1,5 +1,4 @@
-import { Months } from './../../moduls/months.modul';
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {User} from '../../moduls/user.modul';
@@ -10,18 +9,11 @@ import {Keyword} from '../../moduls/keyword.modul';
 })
 export class TestService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   private requestUrlErnest = 'http://api.kono.lt:9999/api/getExperts?keyword=Tensorflow';
-  private requestUrlJaroslav = 'http://a6620c7796c1.ngrok.io/api/core';
-  private requestUrlMonths = {
-    name : 'string',
-    count : 12
-  };
-  months: Months[] = [{
-    name: 'september',
-    count: 12
-  }];
+  private requestUrlJaroslav = 'http://c7750f685f46.ngrok.io/api/core';
 
   getUserList(): Observable<User[]> {
     return this.http.get<User[]>(this.requestUrlErnest);
@@ -29,10 +21,6 @@ export class TestService {
 
   getKeywordList(): Observable<Keyword[]> {
     return this.http.get<Keyword[]>(`${this.requestUrlJaroslav}/getTrendingKeywords`);
-  }
-
-  getMonthData(): Months[] {
-    return this.months;
   }
 
 }
