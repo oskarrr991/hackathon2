@@ -2456,7 +2456,7 @@ input[type="button"].btn-block {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center; }
-  
+
   .btn-group-vertical > .btn,
   .btn-group-vertical > .fc-button,
   .btn-group-vertical > .btn-group {
@@ -4390,7 +4390,7 @@ a.close.disabled {
 .tooltip-inner {
   max-width: 200px;
   padding: 0.25rem 0.5rem;
-  color: #101010;
+  color: white;
   text-align: center;
   background-color: #fff;
   border-radius: 0.25rem; }
@@ -8463,7 +8463,7 @@ footer {
   .card-bg-inverse-white:not(.accordion-grouped) a:hover {
     background: rgba(255, 255, 255, 0.3); }
   .card-bg-inverse-white:not(.accordion-grouped) a[aria-expanded="true"] {
-    background: #fff;
+    background: #27293d;
     color: #fff; }
 
 .card-bg-primary {
@@ -8549,7 +8549,7 @@ footer {
 .card-bg-white {
   box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2); }
   .card-bg-white a {
-    background: #fff;
+    background: #27293d;
     color: #fff; }
     .card-bg-white a:hover {
       background: #f7f7f7; }
@@ -9390,7 +9390,7 @@ footer {
     background: #0c111f;
     color: #f3eee0; }
   .btn.dropdown-dotted-list, .dropdown-dotted-list.fc-button {
-    background: #fff; }
+    background: #27293d; }
   .btn.dropdown-toggle-split, .dropdown-toggle-split.fc-button {
     padding: 0 8px; }
   .btn.action-btn, .action-btn.fc-button {
@@ -10270,11 +10270,11 @@ footer {
     color: inherit; }
   .tab-container.tab-bg-white .nav-tabs .nav-item .nav-link.active,
   .tab-container.tab-bg-white .nav-pills .nav-item .nav-link.active {
-    background: #fff;
+    background: #27293d;
     color: #fff; }
 
 .tab-container.tab-bg-white .tab-content {
-  background: #fff;
+  background: #27293d;
   color: #fff; }
 
 .nav-tabs {
@@ -10731,14 +10731,14 @@ table {
     color: #fff; }
 
 .slider-white .noUi-base .noUi-connect {
-  background: #fff; }
+  background: #27293d; }
 
 .slider-white .noUi-base .noUi-origin {
-  background: #fff; }
+  background: #27293d; }
   .slider-white .noUi-base .noUi-origin .noUi-handle:after {
-    background: #fff; }
+    background: #27293d; }
   .slider-white .noUi-base .noUi-origin .noUi-handle .noUi-tooltip {
-    background: #fff;
+    background: #27293d;
     color: #fff; }
 
 .ul-slider {
@@ -11765,7 +11765,7 @@ table {
     background: rgba(34, 60, 97, 0.5); }
 
 .notification-indicator-white {
-  background: #fff; }
+  background: #27293d; }
   .notification-indicator-white:before {
     content: "";
     background: rgba(255, 255, 255, 0.5); }
@@ -12853,7 +12853,7 @@ table {
           border-bottom: none; }
         .docs-body .doc-content-wrapper .doc-aside .nav .nav-item .nav-link {
           padding: 10px 20px;
-          background: #fff;
+          background: #27293d;
           color: #cccccc;
           border-radius: 25px;
           transition: 0.7s;
@@ -12928,7 +12928,7 @@ table {
       .docs-body .doc-content-wrapper .doc-aside {
         position: fixed;
         width: 100%;
-        background: #fff;
+        background: #27293d;
         z-index: 99;
         left: 0;
         right: 0;

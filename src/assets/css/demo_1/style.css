@@ -29,7 +29,7 @@
 .t-header {
   display: flex;
   height: 65px;
-  background: #fbfcfd;
+  background: #1e1e2e;
   z-index: 100; }
   @media (max-width: 991.98px) {
     .t-header {
@@ -42,7 +42,7 @@
     width: 17rem;
     min-width: 17rem;
     max-width: 17rem;
-    background: #fff;
+    background: #27293d;
     z-index: 100;
     padding-left: 18px; }
     .t-header .t-header-brand-wrapper a {
@@ -83,7 +83,7 @@
       display: flex;
       width: 20%;
       height: 40px;
-      background: #fff;
+      background: #27293d;
       border-radius: 50px;
       padding: 5px;
       transition: 0.3s ease-in-out;
@@ -139,7 +139,7 @@
       .t-header .t-header-content-wrapper .t-header-content .nav .nav-item .nav-link {
         position: relative; }
         .t-header .t-header-content-wrapper .t-header-content .nav .nav-item .nav-link i {
-          color: #525c5d; }
+          color: white; }
         .t-header .t-header-content-wrapper .t-header-content .nav .nav-item .nav-link .notification-indicator {
           position: absolute;
           top: 12px;
@@ -187,7 +187,7 @@
   width: 17rem;
   min-width: 17rem;
   max-width: 17rem;
-  background: #fff; }
+  background: #27293d; }
   .sidebar .sidebar-header {
     border-bottom: 1px solid #2c3744; }
   .sidebar .user-profile {
@@ -217,7 +217,7 @@
         position: sticky;
         top: 64px;
         display: block;
-        background: #fff;
+        background: #27293d;
         margin: 15px 0px 0px 0px;
         padding: 20px 30px 10px 30px;
         font-size: 10px;
@@ -234,7 +234,7 @@
         padding: 12px 30px 12px 30px;
         font-size: 13px;
         line-height: 1;
-        color: #525c5d;
+        color: white;
         letter-spacing: 0.03rem;
         font-weight: 500;
         max-width: 100%;
@@ -244,7 +244,7 @@
         .sidebar .navigation-menu li a .link-icon {
           margin-right: 15px;
           line-height: 1;
-          color: #525c5d;
+          color: white;
           font-size: 1.1875rem;
           transition-duration: 0.3s;
           transition-property: "margin-right"; }
@@ -278,10 +278,10 @@
                 top: 14px; }
             .sidebar .navigation-menu li .navigation-submenu li a.active {
               opacity: 0.7;
-              color: #101010; }
+              color: white; }
             .sidebar .navigation-menu li .navigation-submenu li a:hover {
               opacity: 0.7;
-              color: #101010; }
+              color: white; }
           .sidebar .navigation-menu li .navigation-submenu li:first-child a {
             padding-top: 10px; }
             .sidebar .navigation-menu li .navigation-submenu li:first-child a:after {
@@ -357,14 +357,14 @@ footer {
       footer ul li a {
         font-weight: 600;
         letter-spacing: 0.03rem;
-        color: #565656; }
+        color: white; }
 
 /* Layout */
 .page-body {
-  background: #fff; }
+  background: #27293d; }
 
 .page-content-wrapper {
-  background: #fbfcfd;
+  background: #1e1e2e;
   border-left: 1px solid #f2f4f9; }
 
 @media (min-width: 992px) {
@@ -392,15 +392,15 @@ footer {
           position: -webkit-sticky;
           position: sticky;
           top: 65px;
-          background: #fbfcfd;
+          background: #1e1e2e;
           z-index: 99; }
           .page-body .page-content-wrapper .page-content-wrapper-inner .viewport-header .breadcrumb {
             padding: 1rem 1rem 1rem 21px;
             margin-left: -20px;
             margin-right: -20px;
-            background: #fbfcfd; }
+            background: #1e1e2e; }
             .page-body .page-content-wrapper .page-content-wrapper-inner .viewport-header .breadcrumb .breadcrumb-item {
-              color: #565656;
+              color: white;
               letter-spacing: 0.03rem;
               font-weight: 500; }
               .page-body .page-content-wrapper .page-content-wrapper-inner .viewport-header .breadcrumb .breadcrumb-item a {
@@ -408,7 +408,7 @@ footer {
               .page-body .page-content-wrapper .page-content-wrapper-inner .viewport-header .breadcrumb .breadcrumb-item.active {
                 color: #696ffb; }
           .page-body .page-content-wrapper .page-content-wrapper-inner .viewport-header .page-title-heading {
-            color: #565656;
+            color: white;
             font-size: 1.5rem;
             font-weight: 500;
             margin-bottom: 0; }
@@ -420,7 +420,7 @@ footer {
   .t-header {
     width: 100vw; }
     .t-header .t-header-brand-wrapper {
-      background: #fbfcfd;
+      background: #1e1e2e;
       width: 4rem;
       min-width: 4rem;
       max-width: 4rem; }
