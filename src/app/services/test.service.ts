@@ -1,6 +1,6 @@
-import { Cases } from './../../moduls/cases.modul';
+import {Cases} from './../../moduls/cases.modul';
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {User} from '../../moduls/user.modul';
 import {Keyword} from '../../moduls/keyword.modul';
@@ -13,13 +13,11 @@ export class TestService {
   constructor(private http: HttpClient) {
   }
 
-  private requestUrlErnest = 'http://api.kono.lt:9999/api/getLeaderboard';
+  private requestUrlErnest = 'http://api.kono.lt:9999/api/';
   private requestUrlJaroslav = 'http://c7750f685f46.ngrok.io/api/core';
-  private requestUrlJaroslav2 = 'http://c7750f685f46.ngrok.io/api/core/getTotalUserCasesByMonth';
-  private requestUrlJaroslav3 = 'http://c7750f685f46.ngrok.io/api/core/getTotalUserCases';
 
   getUserList(): Observable<User[]> {
-    return this.http.get<User[]>(this.requestUrlErnest);
+    return this.http.get<User[]>(`${this.requestUrlErnest}/getLeaderboard`);
   }
 
   getKeywordList(): Observable<Keyword[]> {
@@ -27,10 +25,14 @@ export class TestService {
   }
 
   getCaseList(): Observable<Cases[]> {
-    return this.http.get<Cases[]>(this.requestUrlJaroslav2);
+    return this.http.get<Cases[]>(`${this.requestUrlJaroslav}/getTotalUserCasesByMonth`);
   }
 
   getTotalCases(): Promise<Cases> {
-    return this.http.get<Cases>(this.requestUrlJaroslav3).toPromise();
+    return this.http.get<Cases>(`${this.requestUrlJaroslav}/getTotalUserCases`).toPromise();
+  }
+
+  getUser(username: string): Observable<User> {
+    return this.http.get<User>(`${this.requestUrlErnest}/getExpert/${username}`);
   }
 }
