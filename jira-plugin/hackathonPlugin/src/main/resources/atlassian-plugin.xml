@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}"/>
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="hackathonPlugin"/>
+    <!-- add our web resources -->
+    <web-resource key="hackathonPlugin-resources" name="hackathonPlugin Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        <resource type="download" name="hackathonPlugin.css" location="/css/hackathonPlugin.css"/>
+        <resource type="download" name="hackathonPlugin.js" location="/js/hackathonPlugin.js"/>
+        <resource type="download" name="images/" location="/images"/>
+        <context>hackathonPlugin</context>
+    </web-resource>
+    <web-panel name="ExpertFinder" i18n-name-key="expert-finder.name" key="expert-finder"
+               location="atl.jira.view.issue.right.context" weight="1000">
+        <description key="expert-finder.description">The best expert finder plugin.</description>
+        <context-provider class="com.hackathon.plugin.hackathonPlugin.ExpertFinder"/>
+        <resource name="view" type="velocity" location="templates/expert-finder.vm"/>
+        <label key="expert-finder.title"/>
+    </web-panel>
+</atlassian-plugin>

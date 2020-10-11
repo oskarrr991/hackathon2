@@ -1,0 +1,118 @@
+<script type="text/javascript"
+        src="http://<jira-application>/s/en_USjdx17v-418945332/813/8/1.2.9/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?collectorId=49187c59"></script>
+
+<div id="root">
+    #foreach( $label in $labels )
+        <button class="aui-button" style="margin-bottom: 5px" onclick="f1('$label')">$label</button>
+    #end
+</div>
+<div id="first">
+    <ol class="issue-list" id="second">
+
+    </ol>
+</div>
+<script type="text/javascript">
+
+    function f1(label) {
+
+        var node = document.getElementById("second");
+        node.innerHTML = "";
+
+        var response = fetch('http://api.kono.lt:9999/api/getExperts?keyword=' + label)
+                .then(response => response.json());
+
+        var res = Promise.all([response]).then((values) => {
+            values[0].forEach(o => {
+                var child = document.createElement('li');
+
+        var html = "<li style=\"width:490px;line-height: 30px;margin-right:5px\">" +
+                "<a class=\"splitview-issue-link\">" +
+                "<div class=\"issue-content-container\">" +
+                "<span class=\"issue-link-key\"></span>\n" +
+                "<span><b>" + o.displayName + "</b></span>\n</a>";
+
+        if(!o.active) {
+            html += "<span style=\"float:right\">User inactive, suggested team: <b>" + o.teamName + "</b></span>"
+        } else {
+            html += "<a onclick=\"postRequestExpertHelp('" + o.name + "')\" href=\"sip: " + o.emailAddress + "\"style=\"display: inline-block;float:right;width: 20%;\" id=\"comment-issue"+o.name+"\" class=\"aui-button toolbar-trigger issueaction-comment-issue add-issue-comment inline-comment\">" +
+                    "<span class=\"icon aui-icon aui-icon-small aui-iconfont-comment icon-comment\"></span> " +
+                    "<span class=\"trigger-label\">Contact</span>" +
+                    "</a>" +
+                    "<select class=\"aui-button toolbar-trigger issueaction-comment-issue add-issue-comment inline-comment\" onchange=\"f2('" + o.name + "','" + label + "')\" style=\"display: none;float:right;width: 20%;\" id=\"rating" + o.name+"\">\n" +
+                    "<option value=\"\" disabled selected hidden>Rate</option>"+
+                    "                        <option value=\"excellent\">Excellent</option>\n" +
+                    "                        <option value=\"verygood\">Very good</option>\n" +
+                    "                        <option value=\"good\">Good</option>\n" +
+                    "                        <option value=\"average\">Average</option>\n" +
+                    "                        <option value=\"bad\">Bad</option>\n" +
+                    "                    </select>";
+        }
+
+        if(typeof o.confluenceArticles !== 'undefined'){
+            html += "<br><span>Confluence articles: </span>"
+            o.confluenceArticles.forEach(conf => {
+                console.log(conf.summary);
+            html += "<br><a href=\"" + conf.url + "\" class=\"issue-link-summary\">" + conf.summary + "</a>";
+        });
+        }
+        if(typeof o.jiraIssues !== 'undefined'){
+            html += "<br><span>Jira issues: </span>"
+            o.jiraIssues.forEach(jira => {
+                console.log(jira.summary);
+            html += "<br><a href=\"" + jira.url + "\" class=\"issue-link-summary\">" + jira.summary + "</a>";
+        });
+        }
+
+           html+= "</div></li>";
+        child.innerHTML = html;
+        child = child.firstChild;
+        document.getElementById("second").appendChild(child);
+    })
+    });
+    }
+
+    function postRequestExpertHelp(username) {
+        var data = { username: username};
+        fetch('http://c7750f685f46.ngrok.io/api/core/requestExpertHelp', {method: 'POST', headers: {
+                'Content-Type': 'application/json'
+            },body: JSON.stringify(data)});
+
+        document.getElementById("rating"+username).style.display = 'inline-block';
+        document.getElementById("comment-issue"+username).style.display = 'none';
+    };
+
+    function f2(username, keyword) {
+        var rating;
+        switch(document.getElementById("rating"+username).value) {
+            case "excellent":
+                rating = 5;
+                break;
+            case "verygood":
+                rating = 4;
+                break;
+            case "good":
+                rating = 3;
+                break;
+            case "average":
+                rating = 2;
+                break;
+            case "bad":
+                rating = 1;
+                break;
+            default:
+                break;
+        }
+        var data = { username: username,
+        keyword: keyword,
+        reviewScore: rating};
+        fetch('http://api.kono.lt:9999/api/addUserReview', {method: 'POST', headers: {
+                'Content-Type': 'application/json'
+            },body: JSON.stringify(data)});
+        document.getElementById("rating"+username).style.display = 'none';
+       };
+
+
+</script>
+
+
+
