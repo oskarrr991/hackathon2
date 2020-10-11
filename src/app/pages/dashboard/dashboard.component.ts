@@ -63,9 +63,8 @@ export class DashboardComponent implements OnInit {
       getLineChart(this.receivedCases, this.solvedCases, this.months);
     });
     this.testService.getTotalCases().then(data => {
-      // this.totalReceivedCases = data[0].totalReceivedCases;
-      console.log(data.);
-      // console.log(data.totalSolvedCases);
+      this.userReceivedCases = data.totalReceivedCases;
+      this.userSolvedCases = data.totalSolvedCases;
     });
   }
 

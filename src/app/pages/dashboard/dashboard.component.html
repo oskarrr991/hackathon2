@@ -36,55 +36,15 @@
           <i class="mdi mdi-gauge link-icon"></i>
         </a>
       </li>
-      <li>
-        <a href="#sample-pages" data-toggle="collapse" aria-expanded="false">
-          <span class="link-title">Sample Pages</span>
-          <i class="mdi mdi-flask link-icon"></i>
-        </a>
-        <ul class="collapse navigation-submenu" id="sample-pages">
-          <li>
-            <a href="../app/pages/sample-pages/login_1.html" target="_blank">Login</a>
-          </li>
-          <li>
-            <a href="../app/pages/sample-pages/error_2.html" target="_blank">Error</a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <a href="#ui-elements" data-toggle="collapse" aria-expanded="false">
-          <span class="link-title">News</span>
-          <i class="mdi mdi-bullseye link-icon"></i>
-        </a>
-        <ul class="collapse navigation-submenu" id="ui-elements">
-          <li>
-            <a href="../app/pages/ui-components/buttons.html">Buttons</a>
-          </li>
-          <li>
-            <a href="../app/pages/ui-components/tables.html">Tables</a>
-          </li>
-          <li>
-            <a href="../app/pages/ui-components/typography.html">Typography</a>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <a href="../app/pages/forms/form-elements.html">
-          <span class="link-title">FAQ's</span>
-          <i class="mdi mdi-clipboard-outline link-icon"></i>
-        </a>
-      </li>
+
+
       <li>
         <a href="../app/pages/charts/chartjs.html">
           <span class="link-title">Charts</span>
           <i class="mdi mdi-chart-donut link-icon"></i>
         </a>
       </li>
-      <li>
-        <a href="../app/pages/icons/material-icons.html">
-          <span class="link-title">Icons</span>
-          <i class="mdi mdi-flower-tulip-outline link-icon"></i>
-        </a>
-      </li>
+
       <li>
         <a href="../docs/docs.html">
           <span class="link-title">Settings</span>
@@ -108,10 +68,10 @@
             <div class="grid">
               <div class="grid-body text-gray">
                 <div class="d-flex justify-content-between">
-                  <h2>138</h2>
+                  <h2>{{userReceivedCases}}</h2>
                   <td class="text-success"> 15.67% <i class="mdi mdi-arrow-up"></i></td>
                 </div>
-                <p class="text-black"><b>This month's received cases</b></p>
+                <p class="text-black"><b>All time received cases</b></p>
                 <div class="wrapper w-50 mt-4">
                   <canvas height="70" id="stat-line_1"></canvas>
                 </div>
@@ -123,10 +83,10 @@
             <div class="grid">
               <div class="grid-body text-gray">
                 <div class="d-flex justify-content-between">
-                  <h2>326</h2>
+                  <h2>{{userSolvedCases}}</h2>
                   <td class="text-danger"> 23.05% <i class="mdi mdi-arrow-down"></i>
                 </div>
-                <p class="text-black"><b>This month's solved cases</b></p>
+                <p class="text-black"><b>All time solved cases</b></p>
                 <div class="wrapper w-50 mt-4">
                   <canvas height="70" id="stat-line_2"></canvas>
                 </div>
