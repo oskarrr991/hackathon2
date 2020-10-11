@@ -24,7 +24,50 @@ function getDoughnutChart(data, colors, keywords) {
     });
   }
 }
+function getLineChart(receivedCases, solvedCases, months) {
+  if ($("#chartjs-staked-line-chart").length) {
+    
+    var options = {
+      type: 'line',
+      data: {
+        labels: months,
+        datasets: [{
+            label: 'Received cases',
+            data: receivedCases,
+            borderWidth: 2,
+            fill: false,
+            backgroundColor: chartColors[0],
+            borderColor: chartColors[0],
+            borderWidth: 0
+          },
+          {
+            label: 'Solved cases',
+            data: solvedCases,
+            borderWidth: 2,
+            fill: false,
+            backgroundColor: chartColors[1],
+            borderColor: chartColors[1],
+            borderWidth: 0
+          }
+        ]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              reverse: false
+            }
+          }]
+        },
+        fill: false,
+        legend: false
+      }
+    }
 
+    var ctx = document.getElementById('chartjs-staked-line-chart').getContext('2d');
+    new Chart(ctx, options);
+  }
+}
 $(function () {
   'use strict';
 
@@ -65,47 +108,7 @@ $(function () {
     new Chart(ctx, options);
   }
 
-  if ($("#chartjs-staked-line-chart").length) {
-    var options = {
-      type: 'line',
-      data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            borderWidth: 2,
-            fill: false,
-            backgroundColor: chartColors[0],
-            borderColor: chartColors[0],
-            borderWidth: 0
-          },
-          {
-            label: '# of Points',
-            data: [7, 11, 5, 8, 3, 7],
-            borderWidth: 2,
-            fill: false,
-            backgroundColor: chartColors[1],
-            borderColor: chartColors[1],
-            borderWidth: 0
-          }
-        ]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              reverse: false
-            }
-          }]
-        },
-        fill: false,
-        legend: false
-      }
-    }
-
-    var ctx = document.getElementById('chartjs-staked-line-chart').getContext('2d');
-    new Chart(ctx, options);
-  }
+  
 
   if ($("#chartjs-bar-chart").length) {
     var BarData = {
@@ -123,48 +126,6 @@ $(function () {
       type: 'bar',
       data: BarData,
       options: {
-        legend: false
-      }
-    });
-  }
-
-  if ($("#chartjs-staked-bar-chart").length) {
-    var BarData = {
-      labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
-      datasets: [{
-          label: 'Profit',
-          data: [10, 19, 3, 5, 12, 3],
-          backgroundColor: chartColors[0],
-          borderColor: chartColors[0],
-          borderWidth: 0
-        },
-        {
-          label: 'Sales',
-          data: [23, 12, 8, 13, 9, 17],
-          backgroundColor: chartColors[1],
-          borderColor: chartColors[1],
-          borderWidth: 0
-        }
-      ]
-    };
-    var barChartCanvas = $("#chartjs-staked-bar-chart").get(0).getContext("2d");
-    var barChart = new Chart(barChartCanvas, {
-      type: 'bar',
-      data: BarData,
-      options: {
-        tooltips: {
-          mode: 'index',
-          intersect: false
-        },
-        responsive: true,
-        scales: {
-          xAxes: [{
-            stacked: true,
-          }],
-          yAxes: [{
-            stacked: true
-          }]
-        },
         legend: false
       }
     });
