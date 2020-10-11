@@ -34,7 +34,7 @@
         if(!o.active) {
             html += "<span style=\"float:right\">User inactive, suggested team: <b>" + o.teamName + "</b></span>"
         } else {
-            html += "<a onclick=\"postRequestExpertHelp('" + o.name + "')\" href=\"sip: " + o.emailAddress + "\"style=\"display: inline-block;float:right;width: 20%;\" id=\"comment-issue"+o.name+"\" class=\"aui-button toolbar-trigger issueaction-comment-issue add-issue-comment inline-comment\">" +
+            html += "<a onclick=\"postRequestExpertHelp('" + o.name + "')\" href=\"sip:" + o.emailAddress + "\"style=\"display: inline-block;float:right;width: 20%;\" id=\"comment-issue"+o.name+"\" class=\"aui-button toolbar-trigger issueaction-comment-issue add-issue-comment inline-comment\">" +
                     "<span class=\"icon aui-icon aui-icon-small aui-iconfont-comment icon-comment\"></span> " +
                     "<span class=\"trigger-label\">Contact</span>" +
                     "</a>" +
