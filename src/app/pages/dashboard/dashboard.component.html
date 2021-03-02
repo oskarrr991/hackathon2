@@ -97,11 +97,11 @@
                 <div class="d-flex justify-content-between">
                   <h2>{{casesOpenedThisMonth}}</h2>
                   <td *ngIf="casesOpenedThisMonth/casesOpenedPreviousMonth>=1"
-                      class="text-success"> {{100 - casesOpenedThisMonth / casesOpenedPreviousMonth * 100 | number : '1.2-2'}}
+                      class="text-success"> {{casesOpenedThisMonth / casesOpenedPreviousMonth * 100 - 100| number : '1.2-2'}}
                     %<i
                       class="mdi mdi-arrow-up"></i></td>
                   <td *ngIf="casesOpenedThisMonth/casesOpenedPreviousMonth<1"
-                      class="text-danger"> {{100 - casesOpenedThisMonth / casesOpenedPreviousMonth * 100 | number : '1.2-2'}}
+                      class="text-danger"> {{casesOpenedThisMonth / casesOpenedPreviousMonth * 100 - 100 | number : '1.2-2'}}
                     %<i
                       class="mdi mdi-arrow-down"></i></td>
                 </div>
@@ -119,11 +119,11 @@
                 <div class="d-flex justify-content-between">
                   <h2>{{casesSolvedThisMonth}}</h2>
                   <td *ngIf="casesSolvedThisMonth/casesSolvedPreviousMonth>=1"
-                      class="text-success"> {{100 - casesSolvedThisMonth / casesSolvedPreviousMonth * 100 | number : '1.2-2'}}
+                      class="text-success"> {{casesSolvedThisMonth / casesSolvedPreviousMonth * 100 - 100 | number : '1.2-2'}}
                     %<i
                       class="mdi mdi-arrow-up"></i></td>
                   <td *ngIf="casesSolvedThisMonth/casesSolvedPreviousMonth<1"
-                      class="text-danger"> {{100 - casesSolvedThisMonth / casesSolvedPreviousMonth * 100 | number : '1.2-2'}}
+                      class="text-danger"> {{100 - casesSolvedThisMonth / casesSolvedPreviousMonth * 100 - 100| number : '1.2-2'}}
                     %<i
                       class="mdi mdi-arrow-down"></i></td>
                 </div>

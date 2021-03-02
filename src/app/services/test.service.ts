@@ -14,7 +14,7 @@ export class TestService {
   }
 
   private requestUrlErnest = 'http://api.kono.lt:9999/api/';
-  private requestUrlJaroslav = 'http://c7750f685f46.ngrok.io/api/core';
+  private requestUrlJaroslav = 'https://a2f08649eff6.ngrok.io/api/core';
 
   getUserList(): Observable<User[]> {
     return this.http.get<User[]>(`${this.requestUrlErnest}/getLeaderboard`);

@@ -73,7 +73,7 @@
 
     function postRequestExpertHelp(username) {
         var data = { username: username};
-        fetch('http://c7750f685f46.ngrok.io/api/core/requestExpertHelp', {method: 'POST', headers: {
+        fetch('https://a2f08649eff6.ngrok.io/api/core/requestExpertHelp', {method: 'POST', headers: {
                 'Content-Type': 'application/json'
             },body: JSON.stringify(data)});
 
